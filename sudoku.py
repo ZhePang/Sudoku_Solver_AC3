@@ -261,7 +261,6 @@ def getBoxNum(r, c):
 
 def backtracking(board):
     """Takes a board and returns solved board."""
-    # TODO: implement this
     s = Sudoku(board)
     game = Backtrack(s, False)
     game.solve()
@@ -319,14 +318,14 @@ if __name__ == '__main__':
             board = { ROW[r] + COL[c]: int(line[9*r+c])
                       for r in range(9) for c in range(9)}
 
-            # Print starting board. TODO: Comment this out when timing runs.
-            # print_board(board)
+            # Print starting board.
+            print_board(board)
 
             # Solve with backtracking
             solved_board = backtracking(board)
 
-            # Print solved board. TODO: Comment this out when timing runs.
-            # print_board(solved_board)
+            # Print solved board.
+            print_board(solved_board)
 
             number_of_boards+=1
             total_time=time.process_time() - start
